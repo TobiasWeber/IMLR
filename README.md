@@ -8,7 +8,7 @@ Therefore iteratively an oracle is questioned about different graph vertices to 
 ## Installation
 
 This instruction assumes that you have an octave installation with the statistics package installed.
-Then you can clone this and have a look at the scripts folder in which example simulations are performed for
+Then you can clone this repository and have a look at the scripts folder in which example simulations are performed for
 user input graphs in an adjacency list format.
 
 ## Usage
