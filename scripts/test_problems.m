@@ -115,7 +115,12 @@ end
 time_and_date = ctime(time());
 time_and_date = strrep(time_and_date, " ", "_");
 time_and_date = strrep(time_and_date, ":", "..");
-result_file_name = ["results_",num2str(repetitions),"repetitions","_col_problems_",time_and_date];
+pos = strfind(problems{1},"graph_data_");
+problem_set = problems{1}(pos+11:pos+14);
+if  strcmp(problem_set(1:3),"col")
+   problem_set =  problem_set(1:3);
+end
+result_file_name = ["results_",num2str(repetitions),"repetitions_",problem_set,"_problems_",time_and_date];
 save(["../results/",result_file_name], "iterations_of_problem", "distance_to_source", "velo_true", "offset_true", "problem_nr", "origin_true"
 ,"sigma_true","problem_size","problem_edges","problem_adj_diameter","problem_name"
 ,"number_of_nodes_worse_than_estimate_during_iterations","number_of_nodes_better_than_estimate_during_iterations","object_values_triple"
